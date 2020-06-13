@@ -31,7 +31,7 @@ const styles = theme => ({
     fontWeight: theme.typography.h6.fontWeight
   },
   brandText: {
-    fontFamily: "'Baloo Bhaijaan', cursive",
+    fontFamily: "Helvetica",
     fontWeight: 400
   },
   noDecoration: {
@@ -52,12 +52,17 @@ function NavBar(props) {
   const menuItems = [
     {
       link: "/",
-      name: "Home",
+      name: "Start Washing!",
       icon: <HomeIcon className="text-white" />
     },
     {
       link: "/blog",
-      name: "Blog",
+      name: "About",
+      icon: <BookIcon className="text-white" />
+    },
+    {
+      link: "/blog",
+      name: "Contact Us",
       icon: <BookIcon className="text-white" />
     },
     {
@@ -82,7 +87,7 @@ function NavBar(props) {
               display="inline"
               color="primary"
             >
-              Wa
+              On Th
             </Typography>
             <Typography
               variant="h4"
@@ -90,7 +95,7 @@ function NavBar(props) {
               display="inline"
               color="secondary"
             >
-              Ver
+              e Wash
             </Typography>
           </div>
           <div>

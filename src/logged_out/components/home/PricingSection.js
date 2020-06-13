@@ -50,7 +50,7 @@ function PricingSection(props) {
   return (
     <div className="lg-p-top" style={{ backgroundColor: "#FFFFFF" }}>
       <Typography variant="h3" align="center" className="lg-mg-bottom">
-        Pricing
+        How It Works
       </Typography>
       <div className={classNames("container-fluid", classes.containerFix)}>
         <Grid
@@ -58,6 +58,26 @@ function PricingSection(props) {
           spacing={calculateSpacing(width)}
           className={classes.gridContainer}
         >
+                    <Grid
+            item
+            className={classes.cardWrapper}
+            xs={12}
+            sm={6}
+            lg={3}
+            data-aos="zoom-in-up"
+            data-aos-delay={isWidthUp("md", width) ? "600" : "200"}
+          >
+            <PriceCard
+              title="Make a Laundry Order"
+              pricing={
+                <span>
+                 You make an Order through your account
+                  <Typography display="inline"> -</Typography>
+                </span>
+              }
+              features={["Customizable Wash and Dry settings", "Scheduled or Asap pick up time", "Cancel up to 24 hr before pickup"]}
+            />
+          </Grid>
           <Grid
             item
             xs={12}
@@ -67,35 +87,35 @@ function PricingSection(props) {
             data-aos="zoom-in-up"
           >
             <PriceCard
-              title="Starter"
+              title="Pick up"
               pricing={
                 <span>
-                  $14.99
-                  <Typography display="inline"> / month</Typography>
+                  We pick your clothes up
+                  <Typography display="inline"> -</Typography>
                 </span>
               }
-              features={["Feature 1", "Feature 2", "Feature 3"]}
+              features={["Scheduled pick up", "Driver picks up your clothes and transports to our warehouses"]}
             />
           </Grid>
           <Grid
             item
-            className={classes.cardWrapperHighlighted}
+            className={classes.cardWrapper}
             xs={12}
             sm={6}
             lg={3}
             data-aos="zoom-in-up"
-            data-aos-delay="200"
+            
           >
             <PriceCard
-              highlighted
-              title="Premium"
+              
+              title="Wash and Dry"
               pricing={
                 <span>
-                  $29.99
-                  <Typography display="inline"> / month</Typography>
+                  We Wash, Dry, and Fold your clothes
+                  <Typography display="inline"> -</Typography>
                 </span>
               }
-              features={["Feature 1", "Feature 2", "Feature 3"]}
+              features={["Live tracking", "Your choice of wash, dry, and/or dry cleaning"]}
             />
           </Grid>
           <Grid
@@ -108,36 +128,17 @@ function PricingSection(props) {
             data-aos-delay={isWidthUp("md", width) ? "400" : "0"}
           >
             <PriceCard
-              title="Business"
+              title="We deliver"
               pricing={
                 <span>
-                  $49.99
-                  <Typography display="inline"> / month</Typography>
+                  We deliver your fresh and folded laundry
+                  <Typography display="inline"> -</Typography>
                 </span>
               }
-              features={["Feature 1", "Feature 2", "Feature 3"]}
+              features={["Scheduled dropoff time", "Guaranteed a max of 36 hours", "Guaranted Satisfaction"]}
             />
           </Grid>
-          <Grid
-            item
-            className={classes.cardWrapper}
-            xs={12}
-            sm={6}
-            lg={3}
-            data-aos="zoom-in-up"
-            data-aos-delay={isWidthUp("md", width) ? "600" : "200"}
-          >
-            <PriceCard
-              title="Tycoon"
-              pricing={
-                <span>
-                  $99.99
-                  <Typography display="inline"> / month</Typography>
-                </span>
-              }
-              features={["Feature 1", "Feature 2", "Feature 3"]}
-            />
-          </Grid>
+
         </Grid>
       </div>
     </div>
