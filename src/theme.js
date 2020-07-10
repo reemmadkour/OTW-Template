@@ -1,14 +1,16 @@
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
+import { fontSize } from "@material-ui/system";
 
 // colors
-const primary = "#366d96";
-const secondary = "#366d96";
+const primary = "#10564F";
+const secondary = "#CADEDF";
 const black = "#343a40";
 const darkBlack = "rgb(0, 0, 255)";
-const background = "#f5f5f5";
+const background = "#7CB7AF";
 const warningLight = "rgba(253, 200, 69, .3)";
 const warningMain = "rgba(253, 200, 69, .5)";
 const warningDark = "rgba(253, 200, 69, .7)";
+
 
 // border
 const borderWidth = 2;
@@ -42,7 +44,8 @@ const theme = createMuiTheme({
     // E.g., shift from Red 500 to Red 300 or Red 700.
     tonalOffset: 0.2,
     background: {
-      default: background
+      default: background,
+      paper: background
     },
     spacing
   },
@@ -120,7 +123,22 @@ const theme = createMuiTheme({
     }
   },
   typography: {
-    useNextVariants: true
+    useNextVariants: true,
+    
+    h3: {
+      fontWeight:"fontWeightBold",
+      color: "#16796F",
+      fontSize:"83.5",
+     
+    },
+    h4:{
+      color:"#16796F"
+    },
+    h5:{
+      color:"#FFFFFF"
+
+    }
+
   }
 });
 

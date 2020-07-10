@@ -51,7 +51,9 @@ function FeatureCard(props) {
       >
         {Icon}
       </div>
-      <Typography variant="h5" paragraph>
+      <Typography variant="h5" style={{
+          color: "#10564F"
+        }} paragraph>
         {headline}
       </Typography>
       <Typography variant="body1" color="textSecondary">

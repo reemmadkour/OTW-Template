@@ -12,8 +12,9 @@ import {
   withWidth,
   isWidthUp
 } from "@material-ui/core";
-import headerImage from "../../dummy_data/images/headerImage.jpg";
+import headerImage from '../../logo_blue_green.PNG';
 import WaveBorder from "../../../shared/components/WaveBorder";
+import videosrc from "../bcg_video.mp4"
 
 const styles = theme => ({
   extraLargeButtonLabel: {
@@ -66,7 +67,7 @@ const styles = theme => ({
   },
   wrapper: {
     position: "relative",
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.common.white,
     paddingBottom: theme.spacing(2)
   },
   image: {
@@ -77,7 +78,7 @@ const styles = theme => ({
   },
   container: {
     marginTop: theme.spacing(6),
-    marginBottom: theme.spacing(12),
+    marginBottom: theme.spacing(30),
     [theme.breakpoints.down("md")]: {
       marginBottom: theme.spacing(9)
     },
@@ -104,13 +105,26 @@ function HeadSection(props) {
     <Fragment>
       <div className={classNames("lg-p-top", classes.wrapper)}>
         <div className={classNames("container-fluid", classes.container)}>
-          <Box display="flex" justifyContent="center" className="row">
-            <Card
-              className={classes.card}
-              data-aos-delay="200"
-              data-aos="zoom-in"
-            >
-              <div className={classNames(classes.containerFix, "container")}>
+          <video autoPlay="autoplay" loop="loop" muted className={classes.Video}   style={{
+            filter:"contrast(0.5)",
+            
+          width: "100%",
+          position:"absolute",
+          left: 0,
+          top: 0,
+        // height:"100%",
+       //   objectFit: "cover",
+       //   transform:"translate(-50%,-50%)",
+       //   zIndex:"-1"
+
+        }}>
+            <source src= {videosrc} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+      
+          <Box display="flex" justifyContent="center" className="row" >
+         
+              <div className={classNames(classes.containerFix, "container")}> 
                 <Box justifyContent="space-between" className="row">
                   <Grid item xs={12} md={5}>
                     <Box
@@ -119,58 +133,58 @@ function HeadSection(props) {
                       justifyContent="space-between"
                       height="100%"
                     >
-                      <Box mb={4}>
+                      <Box mb={4}  style={{zIndex: "100"}}>
                         <Typography
+                         
                           variant={isWidthUp("lg", width) ? "h3" : "h4"}
                         >
-                          Free Template for building an SaaS app using
-                          Material-UI
+                          On Your Mark,<br /> 
+                           Get Set, <br />
+                           WASH!
                         </Typography>
                       </Box>
-                      <div>
-                        <Box mb={2}>
+                        <Box mb={2}  style={{zIndex: "100"}}>
                           <Typography
                             variant={isWidthUp("lg", width) ? "h6" : "body1"}
                             color="textSecondary"
                           >
-                            Lorem ipsum dolor sit amet, consetetur sadipscing
-                            elitr, sed diam nonumy eirmod tempor invidunt
+                            We make your life simple by doing the tasks no one likes to do. With our pickup, cleaning and delivery services don’t let the cleanliness of your clothing ever be a headache again so you can focus on what’s really important.
                           </Typography>
                         </Box>
                         <Button
                           variant="contained"
-                          color="secondary"
+                          color="primary"
                           fullWidth
                           className={classes.extraLargeButton}
                           classes={{ label: classes.extraLargeButtonLabel }}
                           href="https://github.com/dunky11/react-saas-template"
                         >
-                          Download from GitHub
+                          Make an Order
                         </Button>
-                      </div>
                     </Box>
                   </Grid>
                   <Hidden smDown>
                     <Grid item md={6}>
-                      <img
+                    {/*  <img
                         src={headerImage}
                         className={classes.image}
                         alt="header example"
                       />
+                    */}
                     </Grid>
                   </Hidden>
                 </Box>
-              </div>
-            </Card>
+              </div> 
+           
           </Box>
         </div>
       </div>
-      <WaveBorder
+    {/*  <WaveBorder
         upperColor={theme.palette.secondary.main}
         lowerColor="#FFFFFF"
         className={classes.waveBorder}
         animationNegativeDelay={2}
-      />
+    /> */}
     </Fragment>
   );
 }

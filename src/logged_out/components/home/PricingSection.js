@@ -9,8 +9,10 @@ import {
   withStyles
 } from "@material-ui/core";
 import PriceCard from "./PriceCard";
+import MethodCard from "./MethodCard";
 import calculateSpacing from "./calculateSpacing";
-
+import logo from '../../logo_blue_green.PNG'; 
+import ZoomImage from "../../../shared/components/ZoomImage";
 const styles = theme => ({
   containerFix: {
     [theme.breakpoints.down("md")]: {
@@ -33,7 +35,8 @@ const styles = theme => ({
     [theme.breakpoints.down("xs")]: {
       marginLeft: "auto",
       marginRight: "auto",
-      maxWidth: 340
+      maxWidth: 340,
+      
     }
   },
   cardWrapperHighlighted: {
@@ -42,17 +45,29 @@ const styles = theme => ({
       marginRight: "auto",
       maxWidth: 360
     }
+  },
+  img: {
+    marginLeft: theme.spacing(10),
+    marginRight: theme.spacing(10),
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(100),
+      marginRight: theme.spacing(10)
+    }
   }
 });
 
 function PricingSection(props) {
   const { width, classes } = props;
   return (
-    <div className="lg-p-top" style={{ backgroundColor: "#FFFFFF" }}>
-      <Typography variant="h3" align="center" className="lg-mg-bottom">
-        How It Works
-      </Typography>
+    <div className="lg-p-top" style={{ backgroundColor: "#CADEDF" }}>
+
+      
+      
       <div className={classNames("container-fluid", classes.containerFix)}>
+      <Typography variant="h3" align="center" className="lg-mg-bottom">
+      <br />
+        How On The Wash Works
+      </Typography>
         <Grid
           container
           spacing={calculateSpacing(width)}
@@ -67,7 +82,7 @@ function PricingSection(props) {
             data-aos="zoom-in-up"
             data-aos-delay={isWidthUp("md", width) ? "600" : "200"}
           >
-            <PriceCard
+            <MethodCard
               title="Make a Laundry Order"
               pricing={
                 <span>
@@ -86,7 +101,7 @@ function PricingSection(props) {
             className={classes.cardWrapper}
             data-aos="zoom-in-up"
           >
-            <PriceCard
+            <MethodCard
               title="Pick up"
               pricing={
                 <span>
@@ -106,7 +121,7 @@ function PricingSection(props) {
             data-aos="zoom-in-up"
             
           >
-            <PriceCard
+            <MethodCard
               
               title="Wash and Dry"
               pricing={
@@ -127,7 +142,7 @@ function PricingSection(props) {
             data-aos="zoom-in-up"
             data-aos-delay={isWidthUp("md", width) ? "400" : "0"}
           >
-            <PriceCard
+            <MethodCard
               title="We deliver"
               pricing={
                 <span>

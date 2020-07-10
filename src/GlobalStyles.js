@@ -54,15 +54,17 @@ const styles = theme => ({
       maxWidth: 1370
     },
     ".lg-mg-top": {
-      marginTop: `${theme.spacing(20)}px !important`,
+      
+      marginTop: `${theme.spacing(19)}px !important`,
       [theme.breakpoints.down("md")]: {
-        marginTop: `${theme.spacing(18)}px !important`
+        marginTop: `${theme.spacing(17)}px !important`
       },
       [theme.breakpoints.down("sm")]: {
-        marginTop: `${theme.spacing(16)}px !important`
+        marginTop: `${theme.spacing(15)}px !important`
       },
       [theme.breakpoints.down("xs")]: {
-        marginTop: `${theme.spacing(14)}px !important`
+        marginTop: `${theme.spacing(13)}px !important`
+      
       }
     },
     ".lg-mg-bottom": {

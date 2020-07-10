@@ -12,64 +12,67 @@ import MeassageIcon from "@material-ui/icons/Message";
 import CancelIcon from "@material-ui/icons/Cancel";
 import calculateSpacing from "./calculateSpacing";
 import FeatureCard from "./FeatureCard";
+import LocalLaundryServiceIcon from '@material-ui/icons/LocalLaundryService';
 
-const iconSize = 30;
+const iconSize = 40;
 
 const features = [
   {
     color: "#00C853",
-    headline: "Feature 1",
+    headline: "Dry Cleaning",
     text:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",
-    icon: <BuildIcon style={{ fontSize: iconSize }} />,
+      "",
+    icon: <LocalLaundryServiceIcon style={{ fontSize: iconSize }} />,
     mdDelay: "0",
     smDelay: "0"
   },
   {
     color: "#6200EA",
-    headline: "Feature 2",
+    headline: "Launder and Press",
     text:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",
-    icon: <CalendarTodayIcon style={{ fontSize: iconSize }} />,
+      "",
+    icon: <LocalLaundryServiceIcon style={{ fontSize: iconSize }} />,
     mdDelay: "200",
     smDelay: "200"
   },
   {
     color: "#0091EA",
-    headline: "Feature 3",
+    headline: "Household cleaning",
     text:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",
-    icon: <MeassageIcon style={{ fontSize: iconSize }} />,
+      "",
+    icon: <LocalLaundryServiceIcon style={{ fontSize: iconSize }} />,
     mdDelay: "400",
     smDelay: "0"
   },
   {
     color: "#d50000",
-    headline: "Feature 4",
+    headline: "Wash and Fold",
     text:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",
-    icon: <ComputerIcon style={{ fontSize: iconSize }} />,
+      "",
+    icon: <LocalLaundryServiceIcon style={{ fontSize: iconSize }} />,
     mdDelay: "0",
     smDelay: "200"
   },
   {
     color: "#DD2C00",
-    headline: "Feature 5",
+    headline: "Corporate Dry Cleaning",
     text:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",
-    icon: <BarChartIcon style={{ fontSize: iconSize }} />,
+      "",
+    icon: <LocalLaundryServiceIcon style={{ fontSize: iconSize }} />,
     mdDelay: "200",
     smDelay: "0"
   },
   {
     color: "#64DD17",
-    headline: "Feature 6",
+    headline: " Pickup & Delivery",
     text:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.",
-    icon: <HeadsetMicIcon style={{ fontSize: iconSize }} />,
+      "",
+    icon: <LocalLaundryServiceIcon style={{ fontSize: iconSize }} />,
     mdDelay: "400",
     smDelay: "200"
-  },
+  }
+  /*,
+
   {
     color: "#304FFE",
     headline: "Feature 7",
@@ -96,7 +99,7 @@ const features = [
     icon: <CancelIcon style={{ fontSize: iconSize }} />,
     mdDelay: "400",
     smDelay: "0"
-  }
+  } */
 ];
 
 function FeatureSection(props) {
@@ -105,9 +108,9 @@ function FeatureSection(props) {
     <div style={{ backgroundColor: "#FFFFFF" }}>
       <div className="container-fluid lg-p-top">
         <Typography variant="h3" align="center" className="lg-mg-bottom">
-          Features
+          Our Services
         </Typography>
-        <div className="container-fluid">
+        <div className="container-fluid lg-mg-bottom">
           <Grid container spacing={calculateSpacing(width)}>
             {features.map(element => (
               <Grid

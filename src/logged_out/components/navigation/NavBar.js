@@ -16,26 +16,69 @@ import HowToRegIcon from "@material-ui/icons/HowToReg";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import BookIcon from "@material-ui/icons/Book";
 import NavigationDrawer from "../../../shared/components/NavigationDrawer";
+import Helmet from 'react-helmet';
+import { sizing } from '@material-ui/system';
+import logo from '../../logo_blue_green.PNG'; 
+import { pink } from "@material-ui/core/colors";
 
 const styles = theme => ({
   appBar: {
     boxShadow: theme.shadows[6],
-    backgroundColor: theme.palette.common.white
+    backgroundColor: "#7CB7AF"
   },
   toolbar: {
-    display: "flex",
-    justifyContent: "space-between"
+  //  display: "flex",
+  //  justifyContent: "space-around",
+  //  minHeight: 128,
+   // alignItems: 'flex-start',
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(2),
+  },
+  menuButtonTextWhite: {
+ 
+    fontFamily: "Roboto",
+    fontSize: theme.typography.h4.fontSize,
+    fontWeight: 600,
+    color: "#FFFFFF",
   },
   menuButtonText: {
-    fontSize: theme.typography.body1.fontSize,
-    fontWeight: theme.typography.h6.fontWeight
+    fontFamily: "Roboto",
+    fontSize: theme.typography.h4.fontSize,
+    fontWeight: 600,
+    color: "#10564F"
+  
   },
   brandText: {
-    fontFamily: "Helvetica",
-    fontWeight: 400
+    fontFamily: "Roboto",
+    fontWeight: 600,
+    fontSize: 45,
+    color: "#16796F"
   },
   noDecoration: {
     textDecoration: "none !important"
+  },
+  centered: {
+
+    flexGrow: "2",
+    display: "flex",
+    justifyContent: "center",
+    '& > *': {
+      margin: theme.spacing(1)
+     
+    }
+
+  },
+  edge: {
+
+   
+    display: "flex",
+    justifyContent: "flex-end",
+    '& > *': {
+      margin: theme.spacing(1),
+      backgroundColor: "white"
+    }
+    
+
   }
 });
 
@@ -52,105 +95,110 @@ function NavBar(props) {
   const menuItems = [
     {
       link: "/",
-      name: "Start Washing!",
+      name: "Home",
       icon: <HomeIcon className="text-white" />
     },
     {
       link: "/blog",
-      name: "About",
+      name: "Pricing",
       icon: <BookIcon className="text-white" />
     },
     {
       link: "/blog",
-      name: "Contact Us",
+      name: "Services",
       icon: <BookIcon className="text-white" />
     },
     {
-      name: "Register",
+      name: "Contact Us",
       onClick: openRegisterDialog,
       icon: <HowToRegIcon className="text-white" />
-    },
+    }
+  ];
+
+  const menuItemsEdge = [
     {
       name: "Login",
       onClick: openLoginDialog,
       icon: <LockOpenIcon className="text-white" />
-    }
-  ];
+    },
+    {
+      name: "Start Washing!",
+      onClick: openLoginDialog,
+      icon: <LockOpenIcon className="text-white" />
+    }];
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" className={classes.appBar}>
+      
+      <AppBar position="fixed" height="75%" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <div>
-            <Typography
-              variant="h4"
-              className={classes.brandText}
-              display="inline"
-              color="primary"
-            >
-              On Th
-            </Typography>
-            <Typography
-              variant="h4"
-              className={classes.brandText}
-              display="inline"
-              color="secondary"
-            >
-              e Wash
-            </Typography>
+     
+            <img className={classes.img}  width="200"  src={logo} alt="" />
           </div>
-          <div>
-            <Hidden mdUp>
-              <IconButton
-                className={classes.menuButton}
-                onClick={handleMobileDrawerOpen}
-                aria-label="Open Navigation"
-              >
-                <MenuIcon color="primary" />
-              </IconButton>
-            </Hidden>
-            <Hidden smDown>
+          <div  className={classes.centered}>
+
               {menuItems.map(element => {
-                if (element.link) {
-                  return (
-                    <Link
-                      key={element.name}
-                      to={element.link}
-                      className={classes.noDecoration}
-                      onClick={handleMobileDrawerClose}
-                    >
-                      <Button
-                        color="secondary"
-                        size="large"
-                        classes={{ text: classes.menuButtonText }}
-                      >
-                        {element.name}
-                      </Button>
-                    </Link>
-                  );
-                }
-                return (
+           if (element.link) {
+            return (
+              <Link
+                key={element.name}
+                to={element.link}
+                className={classes.noDecoration}
+                onClick={handleMobileDrawerClose}
+              >
                   <Button
                     color="secondary"
                     size="large"
                     onClick={element.onClick}
-                    classes={{ text: classes.menuButtonText }}
+                    classes={{ text: classes.menuButtonTextWhite }}
+            
                     key={element.name}
                   >
                     {element.name}
                   </Button>
+                  </Link>
                 );
-              })}
-            </Hidden>
+              }
+              return (
+                <Button
+                color="secondary"
+                size="large"
+                onClick={element.onClick}
+                classes={{ text: classes.menuButtonTextWhite }}
+        
+                key={element.name}
+              >
+                {element.name}
+              </Button>
+              );
+            }
+              )}
+
           </div>
+
+      <div  className={classes.edge}>
+
+{menuItemsEdge.map(element => {
+
+  return (
+    <Button
+    
+      size="large"
+    
+      onClick={element.onClick}
+      classes={{ text: classes.menuButtonText }}
+
+      key={element.name}
+    >
+      {element.name}
+    </Button>
+  );
+})}
+
+</div>
         </Toolbar>
-      </AppBar>
-      <NavigationDrawer
-        menuItems={menuItems}
-        anchor="right"
-        open={mobileDrawerOpen}
-        selectedItem={selectedTab}
-        onClose={handleMobileDrawerClose}
-      />
+      </AppBar> 
+  
     </div>
   );
 }
